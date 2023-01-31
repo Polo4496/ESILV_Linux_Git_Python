@@ -1,4 +1,4 @@
-# TD1_1
+# TD1
 ## Exercise 1 : Move around
 1. Go to the root directory
 ```
