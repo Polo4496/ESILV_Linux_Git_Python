@@ -2,6 +2,7 @@
 ## Exercise 1 : Access general computer informations
 1. Put system up to date
 ```
+sudo apt update
 ```
 2. Display
 — Linux version
@@ -91,11 +92,29 @@ pilou
 ```
 14. Change the value of the PATH in the .profile file in order to make it permanent
 ```
-
+vim .profile
+PATH="$PATH:$HOME/my_programs"
 ```
 15. Create a new shell and run your script using its name only
 ```
+source .profile
+pilou
 ```
 
 ## Exercise 3 : Scheduling task - daemon
+1. Create a script say_hello.sh
+— Make it write the current date and time followed by ’Hello’
+— It should write it in a file named ’hellos.txt’
+— Each new output should be appened to the file (it shouldn’t remove previous hellos)
+```
+vim say_hello.sh
+echo "$(date) - Hello You" >> $HOME/linux_ex_3/hellos.txt
+```
+2. Make the script executable
+```
+chmod u+x say_hello.sh
+```
+3. Use crontab to schedule the running of the script every minute
+```
 
+```
