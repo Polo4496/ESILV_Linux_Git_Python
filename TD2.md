@@ -5,6 +5,7 @@
 sudo apt update
 ```
 2. Display
+
 — Linux version
 ```
 ```
