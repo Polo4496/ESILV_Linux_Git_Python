@@ -8,12 +8,15 @@ sudo apt update
 
 — Linux version
 ```
+uname -r
 ```
 — Current processes and memory usage associated
 ```
+top
 ```
 — Display it in a more pleasant way ("more readable for humans")
 ```
+ps
 ```
 — Number of processors
 ```
