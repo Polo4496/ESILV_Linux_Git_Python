@@ -20,21 +20,27 @@ ps
 ```
 — Number of processors
 ```
+nproc
 ```
 — L1, L2 and L3 cache size
 ```
+lscpu
 ```
 — Disk space
 ```
+df
 ```
-— Monted devices
+— Mounted devices
 ```
+mount
 ```
 — Connected usb devices
 ```
+lsblk
 ```
 — Hostname
 ```
+hostname
 ```
 
 ## Exercise 2 : Shell - Variables and scripts scope
@@ -116,9 +122,10 @@ echo "$(date) - Hello You" >> $HOME/linux_ex_3/hellos.txt
 ```
 2. Make the script executable
 ```
-chmod u+x say_hello.sh
+chmod +x say_hello.sh
 ```
 3. Use crontab to schedule the running of the script every minute
 ```
-
+crontab -e
+* * * * * ~/linux_ex_3/say_hello.sh
 ```
