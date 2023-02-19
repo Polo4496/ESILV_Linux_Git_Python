@@ -133,35 +133,47 @@ crontab -e
 ## Exercise 4 : Hashing
 1. Create a folder named hash_checksum. Go into this folder
 ```
+mkdir hash_checksum
+cd hash_checksum
 ```
 2. Inside this folder, create two files named .sensible_addresses and .sensible_passwords
 ```
+touch .sensible_addresses .sensible_passwords
 ```
 3. Display the list of files of the folder
 ```
+ls -A
 ```
 4. Still inside the folder hash_checksum, create a script named gentle_script.sh.
 This script should display the following text "Have a good day".
 ```
+echo "echo \"Have a good day\"" > gentle_script.sh
 ```
 5. Run the script
 ```
+source gentle_script.sh
 ```
 6. Compute the sha256sum of gentle_script. Store it into a file named log_sha
 ```
+sha256sum gentle_script.sh > log_sha
 ```
 7. Now corrupt the file by adding a line of code that deletes any file starting with : ".sensible"
 ```
+echo "rm -rf .sensible*" >> gentle_script.sh
 ```
 8. Compute again the sha256sum of gentle_script. Store it into the log_sha file
 ```
+sha256sum gentle_script.sh >> log_sha
 ```
 9. Run the script
 ```
+source gentle_script.sh
 ```
 10. Display again the list of files of the folder
 ```
+ls -A
 ```
 11. Display the log_sha content : are the hashes any different ?
 ```
+cat log_sha
 ```
