@@ -1,9 +1,9 @@
-# Linux-Git-Python [ESILV]
+# Linux Git Python [ESILV]
 
 Content from the Financial Engineering's course of ESILV about Linux, Git and Python.
 
-*TD = Practical Class*
+**TD = Practical Class**
 
-*Project = Final Project Graded*
+**Project = Final Project Graded**
 
-@ESILV 2023 Financial Engineering
+*@ESILV 2023 Financial Engineering*
