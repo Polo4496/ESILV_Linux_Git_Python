@@ -37,17 +37,17 @@ grep -oP '(?<=meta )\w+' cyberattacks.txt
 ```
 5. Let’s now try more interesting (yet complex) patterns. You might use vim to open the file and look for useful patterns.
 
-— We could ask grep to catch the paragraph corresponding to a sentence that is only present in the introduction.<br>
+- We could ask grep to catch the paragraph corresponding to a sentence that is only present in the introduction.<br>
 Try to run the following command: <i>cat cyberattacks.txt | grep -P 'A cyberattack is'</i>
 ```
 cat cyberattacks.txt | grep -P 'A cyberattack is'
 ```
-— This does not work since the source code is here different from what is visible on the web page. Now try the following:<br>
+- This does not work since the source code is here different from what is visible on the web page. Now try the following:<br>
 <i>cat cyberattacks.txt | grep -P 'A &lt;a href="/wiki/Cyberattack" title="Cyberattack"&gt;cyberattack&lt;/a&gt; is any type'</i>
 ```
 cat cyberattacks.txt | grep -P 'A <a href="/wiki/Cyberattack" title="Cyberattack">cyberattack</a> is any type'
 ```
-— It is now working, but what if the text evolves over time ?<br>
+- It is now working, but what if the text evolves over time<br>
 Try the following instead: <i>cat cyberattacks.txt | grep -A1 'mw-content-text' | grep -v 'mw-content-text'</i>.<br>
 This is based on the text above that seems to be more stable.
 ```
@@ -55,8 +55,8 @@ cat cyberattacks.txt | grep -A1 'mw-content-text' | grep -v 'mw-content-text'
 ```
 6. Your turn
 
-— Extract the tab title <br>
-— Make a list of cyber attacks based on section titles<br>
+- Extract the tab title
+- Make a list of cyber attacks based on section titles
 ```
 cat cyberattacks.txt | grep 'vector-toc-numb' | grep -oP '(?<=span>).*(?=</div)'
 ```
