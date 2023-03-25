@@ -237,7 +237,7 @@ normal user mode
 chmod 666 .private_file
 ```
 
-### Exercise 4.4 : Manage Packages (tools/functions)
+### Exercise 4.4 : Manage Packages (tools / functions)
 1. Update your main package manager named apt
 ```
 sudo apt update
