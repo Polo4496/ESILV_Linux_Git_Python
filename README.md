@@ -1,9 +1,8 @@
 # ESILV linux_git_python
 
-First use of Github while learning Linux and Python during one ESILV's course.
+Content from the Financial Engineering's course of ESILV about Python, Git and Linux.
 
-You will find here some code to deal with the shell in Linux and perform many actions (walk through directories and files, give permissions, write some bash...).
-
-For the moment there is no python content.
+TD = Practical Class
+Project = Final Project Graded
 
 @ESILV2023 A4 Financial Engineering
