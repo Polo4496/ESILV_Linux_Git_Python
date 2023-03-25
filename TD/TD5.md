@@ -7,7 +7,8 @@ The Domesday Book is the greatest medieval census. It lists the manors (private 
 Check the data on https://opendomesday.org/api/, for instance
 - *https://opendomesday.org/api/1.0/county/*
 - *https://opendomesday.org/api/1.0/place/2346/*
-- *https://opendomesday.org/api/1.0/manor/181/*<br>
+- *https://opendomesday.org/api/1.0/manor/181/*
+
 Can you find other interesting URLs ?
 
 **The server was down when I tried to do it so I cannot.**
