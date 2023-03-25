@@ -10,5 +10,4 @@ Check the data on https://opendomesday.org/api/, for instance
 - *https://opendomesday.org/api/1.0/manor/181/*
 
 Can you find other interesting URLs ?
-
-**The server was down when I tried to do it so I couldn't.**
+### The server was down when I tried to do it so I couldn't.
