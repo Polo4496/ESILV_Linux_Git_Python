@@ -15,14 +15,26 @@ I have called it lgp-instance
 — Use an SSH instruction to connect to your remote instance<br>
 — Exit to return to your local machine
 ```
-
+ssh-keygen
+cd ~/.ssh
+chmod 400 private_key
+ssh -i ~/.ssh/private_key plejamtel@34.155.100.18
+exit
 ```
 4. Create a script named connect.sh to automatically connect to the remote instance
 ```
+vim connect.sh
+ssh -i ~/.ssh/private_key plejamtel@34.155.100.18
 ```
 5. Run the script to check it is working properly. Then exit to return to your local machine.
 ```
+source connect.sh
 ```
 6. Rename your private key to make it a hidden file. Propagate the changes to your script. Run the script.
 ```
+cd ~/.ssh
+mv private_key .private_key
+vim connect.sh
+ssh -i ~/.ssh/.private_key plejamtel@34.155.100.18
+source connect.sh
 ```
