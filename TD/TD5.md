@@ -10,4 +10,26 @@ Check the data on https://opendomesday.org/api/, for instance
 - *https://opendomesday.org/api/1.0/manor/181/*
 
 Can you find other interesting URLs ?
-### The server was down when I tried to do it so I couldn't.
+
+**Yes, there is https://opendomesday.org/api/1.0/county/[id_county] to get informations about a special one.**
+
+### Exercise 1.2: curl and grep
+Let’s try to get the ids for all the places in Derbyshire !
+```
+curl https://opendomesday.org/api/1.0/county/ | grep -o "{[^}]*\"name\":\"Derbyshire\"[^}]*}" | grep -o '"id":[^,}]*'
+```
+We can see with this command that the *id* of Derbyshire is **dby**. So we can use the other link so it is easier to acces information.
+```
+mkdir linux_API
+cd linux_API
+curl https://opendomesday.org/api/1.0/county/dby/ | grep -o '[^{}]*"id":[^,}]*' | grep -o '[^:]*$' | tail -n +2 > "ids.txt"
+cat ids.txt
+```
+Now we have all the ids of the places in Derbyshire in a file.
+
+### Exercise 1.3: curl, grep and for
+Now that we have ids for all the places in Derbyshire, we can load all their details...
+And from their details, we can list all the details of their manors.
+Go grep the data !
+```
+```
