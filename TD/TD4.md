@@ -1,8 +1,8 @@
 # TD4
 ## Exercise 1: SSH
 1. Create an account on a cloud computing platform (AWS, Azure, Google Cloud, IBM Cloud)<br>
-— You must enter your credit card number, I have no affiliation<br>
-— It is free. Delete the account in few month to prevent any fee
+- You must enter your credit card number, I have no affiliation
+- It is free. Delete the account in few month to prevent any fee
 ```
 I have chosen Google Cloud and created a project Linux-Git-Python ESILV
 ```
@@ -10,10 +10,10 @@ I have chosen Google Cloud and created a project Linux-Git-Python ESILV
 ```
 I have called it lgp-instance (IP: 34.155.100.18)
 ```
-3. Connect to the distant server via your terminal<br>
-— Do chmod 400 your private key file. The connection won’t work otherwise<br>
-— Use an SSH instruction to connect to your remote instance<br>
-— Exit to return to your local machine
+3. Connect to the distant server via your terminal
+- Do chmod 400 your private key file. The connection won’t work otherwise
+- Use an SSH instruction to connect to your remote instance
+- Exit to return to your local machine
 ```
 ssh-keygen
 cd ~/.ssh
@@ -53,16 +53,16 @@ source connect.sh
 touch test_from_remote_instance.txt
 exit
 ```
-3. Use the scp command to :<br>
-— Send your file test_to_remote_instance.txt to the home folder of your remote instance<br>
-— Get the file test_from_remote_instance.txt to your current local directory
+3. Use the scp command to :
+- Send your file test_to_remote_instance.txt to the home folder of your remote instance
+- Get the file test_from_remote_instance.txt to your current local directory
 ```
 scp test_to_remote_instance.txt plejamtel@34.155.100.18:~
 scp plejamtel@34.155.100.18:~/test_from_remote_instance.txt ~/lgp-instance
 ```
-4. Create two scripts :<br>
-— scp_to_remote_instance.sh and scp_from_remote_instance.sh to respectively send and get data with your remote instance<br>
-— Since you would like to send or receive any file (not just the test file), your scripts should use the path of the file to send / receive as an argument
+4. Create two scripts :
+- scp_to_remote_instance.sh and scp_from_remote_instance.sh to respectively send and get data with your remote instance
+- Since you would like to send or receive any file (not just the test file), your scripts should use the path of the file to send / receive as an argument
 ```
 vim scp_to_remote_instance.sh
 scp $1 plejamtel@34.155.100.18:~
