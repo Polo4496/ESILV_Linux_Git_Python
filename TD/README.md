@@ -1,4 +1,4 @@
-# TD - Python Git Linux
+# TD - Linux Git Python
 
 You will find here some code to deal with:
 -  The shell in Linux and perform many actions (walk through directories and files, give permissions, write some bash...).
