@@ -6,39 +6,39 @@ sudo apt update
 ```
 2. Display
 
-— Linux version
+- Linux version
 ```
 uname -r
 ```
-— Current processes and memory usage associated
+- Current processes and memory usage associated
 ```
 top
 ```
-— Display it in a more pleasant way ("more readable for humans")
+- Display it in a more pleasant way ("more readable for humans")
 ```
 ps
 ```
-— Number of processors
+- Number of processors
 ```
 nproc
 ```
-— L1, L2 and L3 cache size
+- L1, L2 and L3 cache size
 ```
 lscpu
 ```
-— Disk space
+- Disk space
 ```
 df
 ```
-— Mounted devices
+- Mounted devices
 ```
 mount
 ```
-— Connected usb devices
+- Connected usb devices
 ```
 lsblk
 ```
-— Hostname
+- Hostname
 ```
 hostname
 ```
@@ -113,9 +113,9 @@ pilou
 
 ## Exercise 3 : Scheduling task - daemon
 1. Create a script say_hello.sh
-— Make it write the current date and time followed by ’Hello’
-— It should write it in a file named ’hellos.txt’
-— Each new output should be appened to the file (it shouldn’t remove previous hellos)
+- Make it write the current date and time followed by ’Hello’
+- It should write it in a file named ’hellos.txt’
+- Each new output should be appened to the file (it shouldn’t remove previous hellos)
 ```
 vim say_hello.sh
 echo "$(date) - Hello You" >> $HOME/linux_ex_3/hellos.txt
