@@ -8,7 +8,7 @@ I have chosen Google Cloud and created a project Linux-Git-Python ESILV
 ```
 2. Create a server instance on the website of your cloud platform (ec2 for AWS, Standard B1s for Azure)
 ```
-I have called it lgp-instance
+I have called it lgp-instance (IP: 34.155.100.18)
 ```
 3. Connect to the distant server via your terminal<br>
 — Do chmod 400 your private key file. The connection won’t work otherwise<br>
