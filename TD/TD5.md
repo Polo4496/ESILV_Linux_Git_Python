@@ -11,4 +11,4 @@ Check the data on https://opendomesday.org/api/, for instance
 
 Can you find other interesting URLs ?
 
-**The server was down when I tried to do it so I cannot.**
+**The server was down when I tried to do it so I couldn't.**
