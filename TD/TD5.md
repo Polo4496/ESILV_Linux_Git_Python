@@ -28,14 +28,14 @@ cat ids.txt
 Now we have all the ids of the places in Derbyshire in a file.
 
 ### Exercise 1.3: curl, grep and for
-Now that we have ids for all the places in Derbyshire, we can load all their details...
-And from their details, we can list all the details of their manors.
+Now that we have ids for all the places in Derbyshire, we can load all their details...<br>
+And from their details, we can list all the details of their manors.<br>
 Go grep the data !
 ```
 mkdir places_details
 mkdir manors_details
 ```
-To create the directories to put the details about places and manors we will load.
+We create the directories to put the details about places and manors we will load.
 ```
 while read id; do 
   content=$(curl https://opendomesday.org/api/1.0/place/$id/);
