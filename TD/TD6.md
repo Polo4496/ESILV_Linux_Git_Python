@@ -138,4 +138,92 @@ Date:   Mon Mar 6 11:47:22 2023 +0200
     Added main.py
 ```
 
-## Exercise 4:
+## Exercise 4: Basic workflow with multiple files treated all at once
+1. Create three empty files named “requirements.txt”, “.gitignore” and “.private”
+```
+touch requirements.txt .gitignore .private
+```
+2. Check the current git status
+```
+git status
+```
+The 3 files created appears as they have been modified.
+
+3. Stage all the files at once
+```
+git add -A
+```
+4. Check the current git status
+```
+git status
+```
+The 3 files have their modifications validated.
+
+5. Commit the current staged files
+```
+git commit -m "Creation files"
+```
+6. Check the current git status
+```
+git status
+```
+7. Check the git logs where each log is displayed on a single line
+```
+git log
+```
+```
+commit 113f7b0f6a0fd873d7f681bbdbe24e1b9cc12a3d (HEAD -> master)
+Author: Polo4496 <polo.lejamtel@gmail.com>
+Date:   Mon Mar 6 12:02:02 2023 +0200
+
+    Creation files
+```
+
+## Exercise 5: Private files
+Files can be private in two ways :
+- being a temporary file (like an open Excel would produce or Python Jupyter Notebook would produce). This would happen to anyone using your project.
+- being a personal file (personal notes, etc.)
+1. Emulate a temporary empty file by creating a file named “temp.ipynb”
+```
+touch temp.ipynb
+```
+2. Check the current git status
+```
+git status
+```
+There is the file *temp.ipynb* that has been modified.
+
+3. Add an instruction to .gitignore to prevent git from tracking this temp file
+```
+echo "temp.ipynb" > .gitignore
+```
+4. Check the current git status
+```
+git status
+```
+The file *temp.ipynb* doesn't appear anymore in the output, only the modification of *.gitignore* is here.
+
+5. Create other temporary files named “temp.aux” and “temp.log”
+```
+touch temp.aux temp.log
+```
+6. Check the current git status
+```
+git status
+```
+There are modifications about *temp.aux* and *temp.log*.
+
+7. Change your instruction in .gitignore to prevent git from tracking any file which name starts with “temp”
+```
+echo "temp*" > .gitignore
+```
+8. Check the current git status
+```
+git status
+```
+There is only modification of *.gitignore*.
+
+9. Now let’s consider your personal notes will be added to the “.private” folder. Use the “exclude” git file to prevent git from tracking this “.private” folder
+```
+echo ".private/" >> .gitignore
+```
