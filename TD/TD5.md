@@ -11,7 +11,7 @@ Check the data on https://opendomesday.org/api/, for instance
 
 Can you find other interesting URLs ?
 
-**Yes, there is https://opendomesday.org/api/1.0/county/[id_county] to get informations about a special one.**
+**Yes, there is https://opendomesday.org/api/1.0/county/[id_county] to get informations about a specific county.**
 
 ### Exercise 1.2: curl and grep
 Let’s try to get the ids for all the places in Derbyshire !
@@ -32,4 +32,17 @@ Now that we have ids for all the places in Derbyshire, we can load all their det
 And from their details, we can list all the details of their manors.
 Go grep the data !
 ```
+mkdir places_details
+mkdir manors_details
 ```
+To create the directories to put the details about places and manors we will load.
+```
+while read id; do 
+  content=$(curl https://opendomesday.org/api/1.0/place/$id/);
+  echo $content > "places_details/${id}_details.json";
+  manor=$(cat "places_details/1036_details.json" | grep -o '[^,]*"manors":[^,}]*' | grep -o '[^:}]*$');
+  content=$(curl https://opendomesday.org/api/1.0/manor/$manor/);
+  echo $content > "manors_details/place_${id}_manor.json";
+done<ids.txt
+```
+Then we have loaded every informations about places in our file *ids.txt* in a new file *[id]_details.json* and about the manor in *place_[id]_manor.json*.
