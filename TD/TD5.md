@@ -40,7 +40,7 @@ We create the directories to put the details about places and manors we will loa
 while read id; do 
   content=$(curl https://opendomesday.org/api/1.0/place/$id/);
   echo $content > "places_details/${id}_details.json";
-  manor=$(cat "places_details/1036_details.json" | grep -o '[^,]*"manors":[^,}]*' | grep -o '[^:}]*$');
+  manor=$(cat "places_details/${id}_details.json" | grep -o '[^,]*"manors":[^,}]*' | grep -o '[^:}]*$');
   content=$(curl https://opendomesday.org/api/1.0/manor/$manor/);
   echo $content > "manors_details/place_${id}_manor.json";
 done<ids.txt
