@@ -66,15 +66,32 @@ app.layout = html.Div([
         style={'height': '70vh', 'padding': '30px'}
     ),
     html.Div([
-        html.H2('Daily Report', 
-            style={
-                'color': '#e74c3c',
-                'fontSize': 30,
-                'fontFamily': 'Roboto, sans-serif',
-                'fontWeight': 'bold',
-                'textAlign': 'center',
-                'textShadow': '1px 2px #CCCCCC'
-            }
+        html.Div([
+            html.Span('Report', 
+                style={
+                    'color': '#e74c3c',
+                    'fontSize': 30,
+                    'fontFamily': 'Roboto, sans-serif',
+                    'fontWeight': 'bold',
+                    'textAlign': 'center',
+                    'textShadow': '1px 2px #CCCCCC'
+                }
+            ),
+            html.Span(id='report-date',
+                style={
+                    'color': '#e74c3c',
+                    'fontSize': 30,
+                    'fontFamily': 'Roboto, sans-serif',
+                    'fontWeight': 'bold',
+                    'textAlign': 'center',
+                    'textShadow': '1px 2px #CCCCCC',
+                    'marginLeft': '10px'
+                })
+            ],
+            style={'display': 'flex', 
+                    'align-items': 'center', 
+                    'justify-content': 'center', 
+                    'marginBottom': '10px'}
         ),
         html.Div([
             html.P('Return:', 
@@ -182,12 +199,12 @@ app.layout = html.Div([
     }),
     dcc.Interval(
         id='interval-price',
-        interval=60000, # 1min
+        interval=10000, # 10s
         n_intervals=0
     ),
     dcc.Interval(
         id='interval-report',
-        interval=8640000, # 24h
+        interval=600000, # 10min
         n_intervals=0
     )
 ])
@@ -274,7 +291,8 @@ def reload_data(n_intervals):
     return fig, "$"+str(last_price)
 
 # Get report data
-@app.callback([Output('returns-last-day', 'children'),
+@app.callback([Output('report-date', 'children'),
+               Output('returns-last-day', 'children'),
                Output('volatility-last-day', 'children'),
                Output('max-last-day', 'children'),
                Output('mean-last-day', 'children'),
@@ -283,23 +301,17 @@ def reload_data(n_intervals):
                Output('close-last-day', 'children')],
             [Input('interval-report', 'n_intervals')])
 def reload_report(n_intervals):
-    df = pd.read_csv('avax_data.csv', names=["Date", "Price"])
-    df['Date'] = pd.to_datetime(df['Date'])
-    df["Price"] = pd.to_numeric(df["Price"], errors='coerce')
+    report = pd.read_csv("report.csv").tail(1).iloc[0]
+    last_date = pd.to_datetime(report["Date"]).strftime('%B %d, %Y')
+    return_last_day = report["Return"]
+    volatility_last_day = report["Vol"]
+    max_last_day = report["Max"]
+    mean_last_day = report["Mean"]
+    min_last_day = report["Min"]
+    open_last_day = report["Open"]
+    close_last_day = report["Close"]
 
-    last_day_data = df.tail(1440)
-    pct_change = last_day_data['Price'].pct_change()
-    return_last_day = (1 + pct_change).cumprod().iloc[-1] - 1
-    volatility_last_day = pct_change.std() * (252**0.5)
-
-    max_last_day = max(last_day_data["Price"])
-    min_last_day = min(last_day_data["Price"])
-    mean_last_day = last_day_data["Price"].mean()
-    open_last_day = last_day_data["Price"][0]
-    close_last_day = np.array(last_day_data["Price"])[-1]
-
-
-    return html.Div(f'{return_last_day:.2%}', style={"color": "#2ecc71" if return_last_day > 0 else "#e74c3c"}), f'{volatility_last_day:.2%}', \
+    return last_date, html.Div(f'{return_last_day:.2%}', style={"color": "#2ecc71" if return_last_day > 0 else "#e74c3c"}), f'{volatility_last_day:.2%}', \
     f'${max_last_day}', f'${round(mean_last_day,2)}', f'${min_last_day}', f'${open_last_day}', f'${close_last_day}'
 
 
