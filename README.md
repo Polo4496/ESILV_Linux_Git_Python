@@ -51,6 +51,10 @@ Finally, the file *dashboard_avax.py* contains the code to create the server for
 There is an interval such that the files are read and the data is live actualised.<br>
 I provided a graph of the prices of AVAX, with an underlying graph representing the RSI of AVAX's price.
 
+## Git
+
+I managed my code using git in linux shell to add, commit and push file in this github repository.
+
 <br>
 
 #### Thanks for taking the time to read this ;)
