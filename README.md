@@ -18,7 +18,7 @@ actual_date=$(date --date='2hour' "+%A %B %d %Y %H:%M:%S")
 echo "$actual_date, $actual_price" >> avax_data.csv
 ```
 The data is then stored in a file *avax_data.csv*.<br>
-After that, I had to make this script run automatically *every minute* to get live data (I decided every min instead of every five minutes in order to get more data and a better graph). To do so, I made a *crontab* task.
+After that, I had to make this script run automatically **every minute** to get live data (I decided every minute instead of every five minutes in order to get more data and a better graph). To do so, I made a *crontab* task.
 ```
 crontab -e
 */1 * * * * ~/get_data_avax.sh
