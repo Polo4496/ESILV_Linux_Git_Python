@@ -199,12 +199,12 @@ app.layout = html.Div([
     }),
     dcc.Interval(
         id='interval-price',
-        interval=10000, # 10s
+        interval=60000, # 1min
         n_intervals=0
     ),
     dcc.Interval(
         id='interval-report',
-        interval=600000, # 10min
+        interval=3600000, # 1h
         n_intervals=0
     )
 ])
