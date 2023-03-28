@@ -4,6 +4,6 @@ Content from the Financial Engineering's course of ESILV about Linux, Git and Py
 
 **TD = Practical Class**
 
-**Project = Final Project Graded**
+**Branch Project = Final Project Graded**
 
 *@ESILV 2023 Financial Engineering*
