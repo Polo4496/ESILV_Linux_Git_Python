@@ -4,7 +4,7 @@ Final Project of the course where we have to implement a script scrapping data o
 
 ## Virtual Machine
 
-For the project, I needed a virtual machine to deploy the dashboard on a web page which is accesible from everyone.<br>
+For the project, I needed a virtual machine to deploy the dashboard on a web page accesible from everyone.<br>
 I created an account on Google Cloud Plateform and got one. Then I have taken some scripts from the TD to connect automatically to the instance and import/export file from local to remote.<br>
 The IP address of my virtual machine where you can find my final website is http://34.155.100.18:8000/ on the port 8000.
 
